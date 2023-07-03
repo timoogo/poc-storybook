@@ -1,0 +1,23 @@
+button {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.size-small {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+button.size-large {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+button.primary {
+  background-color: blue;
+  color: white;
+}

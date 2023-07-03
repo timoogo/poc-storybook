@@ -1,0 +1,177 @@
+import { Meta } from '@storybook/blocks';
+import {ButtonComponent} from "../Core/Button/Button.component";
+
+<Meta title="Core/Button" />
+
+<style>
+  {`
+    .subheading {
+      --mediumdark: '#999999';
+      font-weight: 700;
+      font-size: 13px;
+      color: #999;
+      letter-spacing: 6px;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      margin-top: 40px;
+    }
+
+    .link-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      row-gap: 10px;
+    }
+
+    @media (min-width: 620px) {
+      .link-list {
+        row-gap: 20px;
+        column-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media all and (-ms-high-contrast:none) {
+    .link-list {
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr;
+      }
+    }
+
+    .link-item {
+      display: block;
+      padding: 20px;
+      border: 1px solid #00000010;
+      border-radius: 5px;
+      transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
+      color: #333333;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .link-item:hover {
+      border-color: #1EA7FD50;
+      transform: translate3d(0, -3px, 0);
+      box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+    }
+
+    .link-item:active {
+      border-color: #1EA7FD;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .link-item strong {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .link-item img {
+      height: 40px;
+      width: 40px;
+      margin-right: 15px;
+      flex: none;
+    }
+
+    .link-item span,
+    .link-item p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .tip {
+      display: inline-block;
+      border-radius: 1em;
+      font-size: 11px;
+      line-height: 12px;
+      font-weight: 700;
+      background: #E7FDD8;
+      color: #66BF3C;
+      padding: 4px 12px;
+      margin-right: 10px;
+      vertical-align: top;
+    }
+
+    .tip-wrapper {
+      font-size: 13px;
+      line-height: 20px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .tip-wrapper code {
+      font-size: 12px;
+      display: inline-block;
+    }
+  `}
+</style>
+
+
+# Composant Bouton
+
+Le composant Bouton est utilisé pour afficher un élément de type bouton avec des propriétés personnalisables.
+
+## Utilisation
+
+```jsx
+
+<app-button label="Cliquez-moi" size="medium" primary={false} />
+```
+
+## Props
+
+Exemple de props :
+
+<table>
+  <thead>
+  <tr>
+    <th>Propriété</th>
+    <th>Type</th>
+    <th>Valeur par défaut</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>label</td>
+    <td>string</td>
+    <td></td>
+    <td>Le texte du libellé du bouton.</td>
+  </tr>
+  <tr>
+    <td>size</td>
+    <td>'small' \| 'medium' \| 'large'</td>
+    <td>'medium'</td>
+    <td>La taille du bouton.</td>
+  </tr>
+  <tr>
+    <td>primary</td>
+    <td>boolean</td>
+    <td>false</td>
+    <td>Indique si le bouton est primaire.</td>
+  </tr>
+  </tbody>
+</table>
+
+
+## Exemples
+### Bouton par défaut
+```jsx
+<app-button label="Bouton par défaut" />
+```
+### Bouton primaire
+```jsx
+<app-button label="Bouton primaire" primary={true} />
+```
+### Bouton de petite taille
+```jsx
+<app-button label="Bouton de petite taille" size="small" />
+```
+### Bouton de grande taille
+```jsx
+
+<app-button label="Bouton de grande taille" size="large" />
+```
